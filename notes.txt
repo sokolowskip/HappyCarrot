@@ -1,0 +1,18 @@
+1. Create the database and the Clients table
+2. Populate Clients table with random database
+3. Talk a little about SET STATISTICS IO
+4. Run query searching row by id
+5. Show that: number of scanned pages * 8kB ~= size of table
+6. Create PRIMARY KEY
+7. Shows that only 3 pages are scanned
+8. Talk a little about B-trees and why we read exactly 3 pages
+9. Show why WHERE Id IN (...) can be inefficient
+10. Select ID, FirstName, LastName by First Name. Show that we again scan ~80k pages
+11. Add index by FirstName. Show that the queery is better byt still not the best
+12. Add index by FirstName, LastName. Show that query is better. Talk about query coverage
+13. Add next index by FirstName, include LastName. Show different sizes, talk a little about another differences
+14. Query by two columns. Show all 4 indexes behaviour.
+15. Use the IDX_FirstName_LastName index. Show that we can filter by first or first and second column. 
+16. Show that SQL Server choose an index which casuse the lowest number of pages read  
+17. Show that SQL Server cannot use two indexes for one table. It choose the one that is better in his mind. Show that usually it is wright. Actually, add hint cause tragedy. Tell why :p
+18. As bonus: show parameters with different distribution issue - parameter sniffing
