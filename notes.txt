@@ -13,6 +13,6 @@
 13. Add next index by FirstName, include LastName. Show different sizes, talk a little about another differences
 14. Query by two columns. Show all 4 indexes behaviour.
 15. Use the IDX_FirstName_LastName index. Show that we can filter by first or first and second column. 
-16. Show that SQL Server choose an index which casuse the lowest number of pages read  
+16. Puzzle: Show that SQL Server choose an index which casuse the lowest number of pages read  
 17. Show that SQL Server cannot use two indexes for one table. It choose the one that is better in his mind. Show that usually it is wright. Actually, add hint cause tragedy. Tell why :p
 18. As bonus: show parameters with different distribution issue - parameter sniffing
