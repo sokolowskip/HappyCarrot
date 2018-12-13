@@ -399,6 +399,9 @@ SELECT ID, FirstName, LastName FROM Clients WITH(INDEX(IDX_FirstName_LastName)) 
 SELECT ID FROM Clients WITH(INDEX(IDX_FirstName_LastName)) WHERE FirstName = 'FN3680' AND LastName = 'LN4020';
 SELECT ID FROM Clients WITH(INDEX(IDX_FirstName_LastName)) WHERE FirstName = 'FN3680';
 SELECT ID FROM Clients WITH(INDEX(IDX_FirstName_LastName)) WHERE LastName = 'LN4020';
+
+
+-- 
 SELECT ID FROM Clients  WHERE LastName = 'LN4020';
 
 
@@ -474,3 +477,70 @@ INSERT INTO Clients(Id, FirstName, LastName, BirthDate, FromDate, OrdersCount, O
 VALUES(-1, 'Zinedine', 'Zidan', '19720623', '20181201', 1, 2000.50, 'France')
 EXECUTE sp_executesql N'SELECT * FROM Clients WHERE Country = @country', N'@country varchar(50)', @country = 'France';
 EXECUTE sp_executesql N'SELECT * FROM Clients WHERE Country = @country', N'@country varchar(50)', @country = 'Slovakia';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- 16. FK
+CREATE TABLE Countries(Name varchar(50) NOT NULL PRIMARY KEY);
+INSERT INTO Countries(Name) Values('Poland'), ('Hungary'), ('Czech Republic'), ('Slovakia'), ('France'), ('Germany'), ('Spain');
+
+DROP INDEX IDX_Country ON Clients;
+
+ALTER TABLE Clients ADD CONSTRAINT FK_Clients_Country 
+FOREIGN KEY (Country) 
+REFERENCES Countries(Name);
+
+DELETE Countries WHERE Name = 'Germany';
+
+CREATE INDEX  IDX_Country ON Clients(Country);
+
+DELETE Countries WHERE Name = 'Spain';

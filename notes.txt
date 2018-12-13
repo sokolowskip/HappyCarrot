@@ -16,3 +16,4 @@
 16. Puzzle: Show that SQL Server choose an index which casuse the lowest number of pages read  
 17. Show that SQL Server cannot use two indexes for one table. It choose the one that is better in his mind. Show that usually it is wright. Actually, add hint cause tragedy. Tell why :p
 18. As bonus: show parameters with different distribution issue - parameter sniffing
+19. As bonus 2: show why indexes on foreign keys can be important.
