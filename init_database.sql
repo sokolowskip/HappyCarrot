@@ -8,7 +8,7 @@ CREATE TABLE Clients(
 	FromDate datetime NOT NULL,
 	OrdersCount int NOT NULL,
 	OrdersAmount decimal(9,2) NOT NULL,
-	City nvarchar(50) NULL);
+	Country nvarchar(50) NULL);
 
 
 DECLARE @birthStart DATE = '1920-01-01'
